@@ -1,3 +1,5 @@
+MASK = 0xffffffffffffffff
+
 def strumok_alpha_mul(word):
     return alphaMul[word >> 56] ^ (word << 8)
 
