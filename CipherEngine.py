@@ -69,7 +69,7 @@ class Strumok:
             stream[i] = ((self.r[0] + self.S[i]) & MASK) ^ self.r[1] ^ self.S[(i + 1) % 16]
         return stream
 
-    def next_xor(self, in_bytes: list) -> list:
+    def next_full_block(self, in_bytes: list) -> list:
         stream = [0] * 16
         for i in range(16):
             self.S[i] = (strumok_alpha_mul(self.S[i]) ^ self.S[(i + 13) % 16] ^ strumok_alpha_mul_inv(self.S[(i - 5) % 16])) & MASK
@@ -86,7 +86,7 @@ class Strumok:
         idx = 0
         while idx + block_size <= len(data):
             block = [int.from_bytes(data[idx + i*8: idx + (i+1)*8], 'little') for i in range(16)]
-            out_block = self.next_xor(block)
+            out_block = self.next_full_block(block)
             for word in out_block:
                 out.extend(word.to_bytes(8, 'little'))
             idx += block_size
