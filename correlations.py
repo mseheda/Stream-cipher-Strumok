@@ -23,10 +23,15 @@ class FCorrelations:
         return algebraic_relations, connection_relations
 
     def generate_algebraic_relation(self, step: int):
-        terms = [f'X{step}*X{(step+1) % 7} + X{(step+2) % 7}',  # Врахування нелінійності
-                f'X{(step+3) % 7} + X{(step+4) % 7}*X{(step+5) % 7}',
-                f'X{(step+6) % 7} + X{step}',  # Врахування циклічності S
-                f'X{(step+1) % 7}*X{(step+3) % 7} + X{(step+5) % 7}']
+        terms = [f'X{step}*X{(step+1) % 7} + X{(step+2) % 7}*X{(step+3) % 7}',
+        f'X{(step+4) % 7} + X{(step+5) % 7}*X{(step+6) % 7}',
+        f'X{(step+1) % 7} xor X{(step+3) % 7} + X{(step+5) % 7}',
+        f'X{(step+2) % 7} xor X{(step+4) % 7}*X{(step+6) % 7}',
+        f'X{(step+1) % 7} + X{(step+4) % 7}*X{(step+6) % 7} xor X{(step+5) % 7}',
+        f'X{(step+4) % 7} xor X{(step+2) % 7}*X{(step+1) % 7} + X{(step+3) % 7}',
+        f'X{(step+5) % 7} xor X{(step+6) % 7}*X{(step+4) % 7} + X{(step+2) % 7}',
+        f'X{(step+1) % 7} + X{(step+3) % 7}*X{(step+5) % 7} xor X{(step+2) % 7}',
+        f'X{(step+6) % 7} xor X{(step+1) % 7}*X{(step+4) % 7} + X{(step+5) % 7}',]
         return ' + '.join(terms)
 
     def generate_connection_relation(self, step: int):
