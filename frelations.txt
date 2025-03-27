@@ -1,15 +1,15 @@
 algebraic relations
-X0*X1 + X2 + X3 + X4*X5 + X6 + X0 + X1*X3 + X5
-X1*X2 + X3 + X4 + X5*X6 + X0 + X1 + X2*X4 + X6
-X2*X3 + X4 + X5 + X6*X0 + X1 + X2 + X3*X5 + X0
-X3*X4 + X5 + X6 + X0*X1 + X2 + X3 + X4*X6 + X1
-X4*X5 + X6 + X0 + X1*X2 + X3 + X4 + X5*X0 + X2
-X5*X6 + X0 + X1 + X2*X3 + X4 + X5 + X6*X1 + X3
-X6*X0 + X1 + X2 + X3*X4 + X5 + X6 + X0*X2 + X4
-X7*X1 + X2 + X3 + X4*X5 + X6 + X7 + X1*X3 + X5
-X8*X2 + X3 + X4 + X5*X6 + X0 + X8 + X2*X4 + X6
-X9*X3 + X4 + X5 + X6*X0 + X1 + X9 + X3*X5 + X0
-X10*X4 + X5 + X6 + X0*X1 + X2 + X10 + X4*X6 + X1
+X0*X1 + X2*X3 + X4 + X5*X6 + X1 xor X3 + X5 + X2 xor X4*X6 + X1 + X4*X6 xor X5 + X4 xor X2*X1 + X3 + X5 xor X6*X4 + X2 + X1 + X3*X5 xor X2 + X6 xor X1*X4 + X5
+X1*X2 + X3*X4 + X5 + X6*X0 + X2 xor X4 + X6 + X3 xor X5*X0 + X2 + X5*X0 xor X6 + X5 xor X3*X2 + X4 + X6 xor X0*X5 + X3 + X2 + X4*X6 xor X3 + X0 xor X2*X5 + X6
+X2*X3 + X4*X5 + X6 + X0*X1 + X3 xor X5 + X0 + X4 xor X6*X1 + X3 + X6*X1 xor X0 + X6 xor X4*X3 + X5 + X0 xor X1*X6 + X4 + X3 + X5*X0 xor X4 + X1 xor X3*X6 + X0
+X3*X4 + X5*X6 + X0 + X1*X2 + X4 xor X6 + X1 + X5 xor X0*X2 + X4 + X0*X2 xor X1 + X0 xor X5*X4 + X6 + X1 xor X2*X0 + X5 + X4 + X6*X1 xor X5 + X2 xor X4*X0 + X1
+X4*X5 + X6*X0 + X1 + X2*X3 + X5 xor X0 + X2 + X6 xor X1*X3 + X5 + X1*X3 xor X2 + X1 xor X6*X5 + X0 + X2 xor X3*X1 + X6 + X5 + X0*X2 xor X6 + X3 xor X5*X1 + X2
+X5*X6 + X0*X1 + X2 + X3*X4 + X6 xor X1 + X3 + X0 xor X2*X4 + X6 + X2*X4 xor X3 + X2 xor X0*X6 + X1 + X3 xor X4*X2 + X0 + X6 + X1*X3 xor X0 + X4 xor X6*X2 + X3
+X6*X0 + X1*X2 + X3 + X4*X5 + X0 xor X2 + X4 + X1 xor X3*X5 + X0 + X3*X5 xor X4 + X3 xor X1*X0 + X2 + X4 xor X5*X3 + X1 + X0 + X2*X4 xor X1 + X5 xor X0*X3 + X4
+X7*X1 + X2*X3 + X4 + X5*X6 + X1 xor X3 + X5 + X2 xor X4*X6 + X1 + X4*X6 xor X5 + X4 xor X2*X1 + X3 + X5 xor X6*X4 + X2 + X1 + X3*X5 xor X2 + X6 xor X1*X4 + X5
+X8*X2 + X3*X4 + X5 + X6*X0 + X2 xor X4 + X6 + X3 xor X5*X0 + X2 + X5*X0 xor X6 + X5 xor X3*X2 + X4 + X6 xor X0*X5 + X3 + X2 + X4*X6 xor X3 + X0 xor X2*X5 + X6
+X9*X3 + X4*X5 + X6 + X0*X1 + X3 xor X5 + X0 + X4 xor X6*X1 + X3 + X6*X1 xor X0 + X6 xor X4*X3 + X5 + X0 xor X1*X6 + X4 + X3 + X5*X0 xor X4 + X1 xor X3*X6 + X0
+X10*X4 + X5*X6 + X0 + X1*X2 + X4 xor X6 + X1 + X5 xor X0*X2 + X4 + X0*X2 xor X1 + X0 xor X5*X4 + X6 + X1 xor X2*X0 + X5 + X4 + X6*X1 xor X5 + X2 xor X4*X0 + X1
 connection relations
 X2 => X4, X5 => X6
 X3 => X5, X6 => X0
