@@ -31,7 +31,8 @@ class FCorrelations:
         f'X{(step+4) % 7} xor X{(step+2) % 7}*X{(step+1) % 7} + X{(step+3) % 7}',
         f'X{(step+5) % 7} xor X{(step+6) % 7}*X{(step+4) % 7} + X{(step+2) % 7}',
         f'X{(step+1) % 7} + X{(step+3) % 7}*X{(step+5) % 7} xor X{(step+2) % 7}',
-        f'X{(step+6) % 7} xor X{(step+1) % 7}*X{(step+4) % 7} + X{(step+5) % 7}',]
+        f'X{(step+6) % 7} xor X{(step+1) % 7}*X{(step+4) % 7} + X{(step+5) % 7}'
+]
         return ' + '.join(terms)
 
     def generate_connection_relation(self, step: int):
