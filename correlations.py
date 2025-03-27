@@ -23,14 +23,14 @@ class FCorrelations:
         return algebraic_relations, connection_relations
 
     def generate_algebraic_relation(self, step: int):
-        terms = [f'X{step}*X{(step+1) % 7}',
-                 f'X{(step+2) % 7} + X{(step+3) % 7}',
-                 f'X{(step+4) % 7}*X{(step+5) % 7}',
-                 f'X{(step+6) % 7} + X{step}']
+        terms = [f'X{step}*X{(step+1) % 7} + X{(step+2) % 7}',  # Врахування нелінійності
+                f'X{(step+3) % 7} + X{(step+4) % 7}*X{(step+5) % 7}',
+                f'X{(step+6) % 7} + X{step}',  # Врахування циклічності S
+                f'X{(step+1) % 7}*X{(step+3) % 7} + X{(step+5) % 7}']
         return ' + '.join(terms)
 
     def generate_connection_relation(self, step: int):
-        return f'X{step}, X{(step+2) % 7}, X{(step+4) % 7} => X{(step+6) % 7}'
+        return f'X{(step+2) % 7} => X{(step+4) % 7}, X{(step+5) % 7} => X{(step+6) % 7}'
 
     # structured according to the manual on the Autoguess github 
     def save_relations_to_file(self, algebraic_relations, connection_relations, filename="frelations.txt"):
