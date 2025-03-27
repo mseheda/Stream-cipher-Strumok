@@ -1,114 +1,14 @@
-Results of Autoguess using cp mode:
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver sat --maxguess 10 --maxsteps 12
+Generating the SAT model ...
+SAT model was generated after 0.38 seconds
 
-root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver cp --cps gecode --maxsteps 7 --dglayout circo
-OR Tools is available
-Number of guessed variables is set to be at most 29
-Generating the CP model ...
-CP model was generated after 0.05 seconds
-Solving the CP model with gecode ...
-Solving process was finished after 0.44 seconds
-Number of guesses: 2
-Number of known variables in the final state: 21 out of 29
-The following 2 variable(s) are guessed:
-X4, X5
-(when two variables are known)
-
-root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver cp --cps gecode --maxsteps 7 --dglayout circo
-OR Tools is available
-Number of guessed variables is set to be at most 29
-Generating the CP model ...
-CP model was generated after 0.05 seconds
-Solving the CP model with gecode ...
-Solving process was finished after 0.37 seconds
-Number of guesses: 3
-Number of known variables in the final state: 21 out of 29
-The following 3 variable(s) are guessed:
-X4, X3, X1
-(when one variable is known)
+Solving with cadical153 ...
+Time used by SAT solver: 0.01 seconds
+Number of guesses: 7
+Number of known variables in the final state: 20 out of 99
+The following 7 variable(s) are guessed:
+X4, X5, X1, X0xorX5, X0xorX4, PFQN725, PFQN024
+root@d8ef6c19b31c:/home/tools/autoguess#
 
 
-Using milp mode:
-root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver milp --maxsteps 5
-Generating the MILP model ...
-MILP model was generated after 0.01 seconds
-Restricted license - for non-production use only - expires 2025-11-24
-Read LP format model from file temp/milp_mg50_ms5_min_bd46611222c9a911cfd3009f73b891.lp
-Reading time = 0.01 seconds
-: 1608 rows, 904 columns, 10094 nonzeros
-Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Debian GNU/Linux 12 (bookworm)")
-
-CPU model: Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz, instruction set [SSE2|AVX|AVX2]
-Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
-
-Optimize a model with 1608 rows, 904 columns and 10094 nonzeros
-Model fingerprint: 0xc7448a0e
-Variable types: 0 continuous, 904 integer (904 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+01]
-  Objective range  [1e+00, 1e+00]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 5e+01]
-Found heuristic solution: objective 28.0000000
-Presolve removed 287 rows and 218 columns
-Presolve time: 0.08s
-Presolved: 1321 rows, 686 columns, 8637 nonzeros
-Variable types: 0 continuous, 686 integer (686 binary)
-Found heuristic solution: objective 17.0000000
-
-Root relaxation: objective 3.375593e-04, 858 iterations, 0.06 seconds (0.06 work units)
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-     0     0    0.00034    0  512   17.00000    0.00034   100%     -    0s
-H    0     0                      15.0000000    0.00034   100%     -    0s
-     0     0    0.04290    0  288   15.00000    0.04290   100%     -    0s
-H    0     0                      14.0000000    0.04290   100%     -    0s
-     0     0    0.04349    0  283   14.00000    0.04349   100%     -    0s
-     0     0    1.00000    0  227   14.00000    1.00000  92.9%     -    0s
-H    0     0                       4.0000000    1.00000  75.0%     -    0s
-     0     0    1.00000    0  179    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0  116    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0  102    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0   41    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0   42    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0   92    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0   67    4.00000    1.00000  75.0%     -    0s
-     0     0    1.00000    0  317    4.00000    1.00000  75.0%     -    1s
-     0     0    1.00000    0  258    4.00000    1.00000  75.0%     -    1s
-     0     0    1.00000    0  248    4.00000    1.00000  75.0%     -    1s
-     0     0    1.00000    0  211    4.00000    1.00000  75.0%     -    1s
-     0     0    1.00000    0  200    4.00000    1.00000  75.0%     -    1s
-     0     0    1.00000    0  165    4.00000    1.00000  75.0%     -    1s
-H    0     0                       3.0000000    1.00000  66.7%     -    1s
-     0     0    1.00000    0  145    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  144    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  163    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  155    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  142    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  150    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  144    3.00000    1.00000  66.7%     -    2s
-     0     0    1.00000    0  143    3.00000    1.00000  66.7%     -    2s
-     0     2    1.00000    0  143    3.00000    1.00000  66.7%     -    3s
-
-Cutting planes:
-  Gomory: 4
-  Implied bound: 46
-  Clique: 425
-  MIR: 5
-  Zero half: 1
-  RLT: 142
-  BQP: 40
-
-Explored 30 nodes (22061 simplex iterations) in 3.80 seconds (3.18 work units)
-Thread count was 4 (of 4 available processors)
-
-Solution count 7: 3 4 10 ... 28
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.000000000000e+00, best bound 3.000000000000e+00, gap 0.0000%
-Solving process was finished after 3.80 seconds
-Number of guesses: 3
-Number of known variables in the final state: 21 out of 29
-The following 3 variable(s) are guessed:
-X4, X6, X0
+з наявними формулами зв'язків за 10 вгадувань вдається знайти базис із 7 змінних
