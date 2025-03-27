@@ -1,0 +1,205 @@
+Autoguess with cp mode (different number of steps and guessing options):
+
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver cp --cps gecode --maxsteps 448 --dglayout circo
+OR Tools is available
+Number of guessed variables is set to be at most 22
+Generating the CP model ...
+CP model was generated after 146.36 seconds
+Solving the CP model with gecode ...
+Solving process was finished after 24.52 seconds
+Number of guesses: 2
+Number of known variables in the final state: 14 out of 22
+The following 2 variable(s) are guessed:
+X4, X6
+
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver cp --cps gecode --maxsteps 7 --dglayout circo
+OR Tools is available
+Number of guessed variables is set to be at most 22
+Generating the CP model ...
+CP model was generated after 0.03 seconds
+Solving the CP model with gecode ...
+Solving process was finished after 0.39 seconds
+Number of guesses: 2
+Number of known variables in the final state: 16 out of 22
+The following 2 variable(s) are guessed:
+X4, X7
+
+
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver cp --cps gecode --maxsteps
+7 --preprocess 1 --D 3 --dglayout circo
+OR Tools is available
+Preprocessing phase was started - 2025-03-27 19:36:34.645561
+Number of algebraic equations: 11
+Number of algebraic variables: 11
+Number of algebraic monomials: 22
+Spectrum of degrees: [2]
+Macaulay matrix was generated in full matrixspace of 132 by 150 sparse matrices over finite field of size 2
+Gaussian elimination was started - 2025-03-27 19:36:39.259564
+#Dependent variables: 112
+#Free variables: 38
+Gaussian elimination was finished after 0.00 seconds
+Writing the results into the temp/macaulay_basis_0951f5034ff9134e7a3d5b89748ec8.txt - 2025-03-27 19:36:39.271981
+Result was written into temp/macaulay_basis_0951f5034ff9134e7a3d5b89748ec8.txt after 0.01 seconds
+Preprocessing phase was finished after 5.0282 seconds
+Number of guessed variables is set to be at most 150
+Generating the CP model ...
+CP model was generated after 2.36 seconds
+Solving the CP model with gecode ...
+Solving process was finished after 6.57 seconds
+Number of guesses: 2
+Number of known variables in the final state: 56 out of 150
+The following 2 variable(s) are guessed:
+X4, X6
+
+
+Now using milp mode (accepts only very small numbers of steps):
+
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver milp --maxsteps 7
+Generating the MILP model ...
+MILP model was generated after 0.01 seconds
+Restricted license - for non-production use only - expires 2025-11-24
+Read LP format model from file temp/milp_mg50_ms7_min_c4d09fe0eecd7514fef62c005dc26a.lp
+Reading time = 0.01 seconds
+: 1697 rows, 946 columns, 8805 nonzeros
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Debian GNU/Linux 12 (bookworm)")
+
+CPU model: Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Optimize a model with 1697 rows, 946 columns and 8805 nonzeros
+Model fingerprint: 0x02d24e5e
+Variable types: 0 continuous, 946 integer (946 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 21.0000000
+Presolve removed 295 rows and 229 columns
+Presolve time: 0.10s
+Presolved: 1402 rows, 717 columns, 7342 nonzeros
+Variable types: 0 continuous, 717 integer (717 binary)
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: objective 1.492295e-05, 870 iterations, 0.06 seconds (0.06 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00001    0  491   14.00000    0.00001   100%     -    0s
+     0     0    0.00235    0  353   14.00000    0.00235   100%     -    0s
+     0     0    0.00237    0  345   14.00000    0.00237   100%     -    0s
+     0     0    1.00000    0  221   14.00000    1.00000  92.9%     -    0s
+H    0     0                      13.0000000    1.00000  92.3%     -    0s
+     0     0    1.00000    0  215   13.00000    1.00000  92.3%     -    0s
+     0     0    1.00000    0  166   13.00000    1.00000  92.3%     -    0s
+     0     0    1.00000    0  148   13.00000    1.00000  92.3%     -    0s
+     0     0    1.00000    0   63   13.00000    1.00000  92.3%     -    0s
+H    0     0                      11.0000000    1.00000  90.9%     -    0s
+     0     0    1.00000    0   55   11.00000    1.00000  90.9%     -    0s
+     0     0    1.00000    0   66   11.00000    1.00000  90.9%     -    0s
+     0     0    1.00000    0   66   11.00000    1.00000  90.9%     -    0s
+H    0     0                       4.0000000    1.00000  75.0%     -    0s
+     0     2    1.00000    0   84    4.00000    1.00000  75.0%     -    0s
+H   62    39                       2.0000000    1.00000  50.0%  40.6    1s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 115
+  Clique: 771
+  MIR: 37
+  StrongCG: 1
+  Zero half: 1
+  RLT: 11
+  BQP: 45
+
+Explored 77 nodes (7100 simplex iterations) in 1.26 seconds (0.87 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 2 4 11 ... 21
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+00, best bound 2.000000000000e+00, gap 0.0000%
+Solving process was finished after 1.27 seconds
+Number of guesses: 2
+Number of known variables in the final state: 14 out of 22
+The following 2 variable(s) are guessed:
+X0, X5
+
+
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver milp --maxsteps 5
+Generating the MILP model ...
+MILP model was generated after 0.01 seconds
+Restricted license - for non-production use only - expires 2025-11-24
+Read LP format model from file temp/milp_mg50_ms5_min_347ae44025998f19f888a789e2d0fb.lp
+Reading time = 0.01 seconds
+: 1213 rows, 682 columns, 6297 nonzeros
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Debian GNU/Linux 12 (bookworm)")
+
+CPU model: Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+
+Optimize a model with 1213 rows, 682 columns and 6297 nonzeros
+Model fingerprint: 0x8331429c
+Variable types: 0 continuous, 682 integer (682 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 21.0000000
+Presolve removed 223 rows and 170 columns
+Presolve time: 0.07s
+Presolved: 990 rows, 512 columns, 5194 nonzeros
+Variable types: 0 continuous, 512 integer (512 binary)
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: objective 6.041568e-04, 555 iterations, 0.03 seconds (0.03 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00060    0  382   14.00000    0.00060   100%     -    0s
+H    0     0                      13.0000000    0.00060   100%     -    0s
+     0     0    0.14286    0  203   13.00000    0.14286  98.9%     -    0s
+     0     0    0.14286    0  200   13.00000    0.14286  98.9%     -    0s
+     0     0    0.41667    0  194   13.00000    0.41667  96.8%     -    0s
+H    0     0                      11.0000000    0.41667  96.2%     -    0s
+     0     0    1.00000    0  168   11.00000    1.00000  90.9%     -    0s
+     0     0    1.00000    0  164   11.00000    1.00000  90.9%     -    0s
+     0     0    1.00000    0  180   11.00000    1.00000  90.9%     -    0s
+H    0     0                       4.0000000    1.00000  75.0%     -    0s
+     0     0    1.00000    0  125    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0   97    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0   82    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0   27    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0   26    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0   38    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0   38    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0  243    4.00000    1.00000  75.0%     -    0s
+     0     0    1.00000    0  221    4.00000    1.00000  75.0%     -    0s
+H    0     0                       2.0000000    1.00000  50.0%     -    0s
+     0     0    1.00000    0  144    2.00000    1.00000  50.0%     -    0s
+     0     0     cutoff    0         2.00000    2.00000  0.00%     -    1s
+
+Cutting planes:
+  Gomory: 2
+  Implied bound: 17
+  Clique: 71
+  MIR: 1
+  Zero half: 16
+  RLT: 58
+  BQP: 38
+
+Explored 1 nodes (5716 simplex iterations) in 1.01 seconds (0.66 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 2 4 10 ... 21
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+00, best bound 2.000000000000e+00, gap 0.0000%
+Solving process was finished after 1.01 seconds
+Number of guesses: 2
+Number of known variables in the final state: 16 out of 22
+The following 2 variable(s) are guessed:
+X4, X7
