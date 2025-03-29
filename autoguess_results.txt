@@ -1,0 +1,14 @@
+root@d8ef6c19b31c:/home/tools/autoguess# python3 autoguess.py --inputfile links.txt --solver sat --maxguess 10 --maxsteps 12
+Generating the SAT model ...
+SAT model was generated after 0.38 seconds
+
+Solving with cadical153 ...
+Time used by SAT solver: 0.01 seconds
+Number of guesses: 7
+Number of known variables in the final state: 20 out of 99
+The following 7 variable(s) are guessed:
+X4, X5, X1, X0xorX5, X0xorX4, PFQN725, PFQN024
+root@d8ef6c19b31c:/home/tools/autoguess#
+
+
+з наявними формулами зв'язків за 10 вгадувань вдається знайти базис із 7 змінних
